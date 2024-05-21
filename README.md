@@ -34,7 +34,7 @@ Microbiota sequence data is already preprocessed and a count table is produced, 
 ```
 df <- read_csv("~/metadata.csv") # metadata
 phyloseq <- readRDS("~/phyloseq.RDS") # phyloseq file
-amr <- read_tsv("~amr_assemblies_melioidosis.tsv") %>%
+amr <- read_tsv("~/amr_assemblies_melioidosis.tsv") %>%
   splitstackshape::concat.split(split.col = "#FILE", sep = "assemblies/") %>%
   splitstackshape::concat.split(split.col = "#FILE_2", sep = "_final") %>%
   dplyr::rename(sample = `#FILE_2_1`) %>%
